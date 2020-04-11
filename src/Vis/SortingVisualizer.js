@@ -20,9 +20,9 @@ class SortingVisualizer extends Component {
 	}
 	addArrays(e) {
 		const array = [];
-		let str = e.target.value;
-		let welp = str.split('  ');
-		// let welp = e.target.value.split(',');
+		let str = e.target.value.replace(/\s+/g, ' ').trim();
+		console.log(str)
+		let welp = str.split(' ');
 		for (let i = 0; i < welp.length; i++) {
 			console.log(typeof welp[i]);
 			array.push(parseInt(welp[i]));
