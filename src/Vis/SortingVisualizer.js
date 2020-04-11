@@ -4,7 +4,7 @@ import './SortingVisualizer.css';
 const ANIMATION_SPEED = 1;
 const Number_ARRAYS = 310;
 const PRIMARY_COLOR = 'blue';
-const SECONDARY_COLOR = 'green';
+const SECONDARY_COLOR = 'red';
 
 class SortingVisualizer extends Component {
 	constructor(props) {
@@ -21,7 +21,7 @@ class SortingVisualizer extends Component {
 	addArrays(e) {
 		const array = [];
 		let str = e.target.value.replace(/\s+/g, ' ').trim();
-		console.log(str)
+		console.log(str);
 		let welp = str.split(' ');
 		for (let i = 0; i < welp.length; i++) {
 			console.log(typeof welp[i]);
@@ -64,7 +64,7 @@ class SortingVisualizer extends Component {
 		const { array } = this.state;
 		console.log(array);
 		return (
-			<div className="array-container">
+			<div className="array-container" style={{ textAlign: 'center', marginTop: '5%' }}>
 				{array ? (
 					array.map((value, idx) => (
 						<div
@@ -79,7 +79,7 @@ class SortingVisualizer extends Component {
 				) : (
 					''
 				)}
-
+				<br />
 				<input onChange={(e) => this.addArrays(e)} />
 				<button onClick={() => this.resetArray()}>Generate New Array</button>
 				<button onClick={() => this.mergeSort()}>Merge Sort</button>
